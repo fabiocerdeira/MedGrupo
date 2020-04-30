@@ -9,6 +9,7 @@ GO
 
 -- DROP TABLE [dbo].[contatos];
 -- GO
+--
 
 CREATE TABLE [dbo].[contatos] (
     [idContato]      INT           IDENTITY (1, 1) NOT NULL,
