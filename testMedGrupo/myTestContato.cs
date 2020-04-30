@@ -116,7 +116,7 @@ namespace testMedGrupo
             Contato oContatoMOQ = new Contato
             {
                 // Nome = "Fabio Mahfoud Cerdeira " + DateTime.Now.Ticks.ToString(), // nesse nome NÃO da FALHA no teste.
-                Nome = "Fabio Mahfoud Cerdeira dsdsd sdsdsdsds ",
+                Nome = "Fabio Mahfoud Cerdeira",
                 Sexo = "M",
                 DataNascimento = new System.DateTime(1977, 4, 13)
             };
