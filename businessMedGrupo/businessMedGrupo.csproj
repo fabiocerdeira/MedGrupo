@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BusBalance.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\crudMedGrupo\crudMedGrupo.csproj" />
+    <ProjectReference Include="..\entitiesMedGrupo\entitiesMedGrupo.csproj" />
+  </ItemGroup>
+
+</Project>
