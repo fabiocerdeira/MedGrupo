@@ -20,3 +20,5 @@ CREATE TABLE [dbo].[contatos] (
 GO
 
 
+insert into dbo.contatos (nome,dataNascimento,sexo) VALUES ('Fabio','1977-04-13','M');
+GO
