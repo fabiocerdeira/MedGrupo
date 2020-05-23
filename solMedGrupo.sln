@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entitiesMedGrupo", "entitiesMedGrupo\entitiesMedGrupo.csproj", "{E1D92EA2-4C3B-45BF-B78B-9D3E90A0BB9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "entitiesMedGrupo", "entitiesMedGrupo\entitiesMedGrupo.csproj", "{E1D92EA2-4C3B-45BF-B78B-9D3E90A0BB9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crudMedGrupo", "crudMedGrupo\crudMedGrupo.csproj", "{F425D93E-02DE-47F9-9278-82B87A8175AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "crudMedGrupo", "crudMedGrupo\crudMedGrupo.csproj", "{F425D93E-02DE-47F9-9278-82B87A8175AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "businessMedGrupo", "businessMedGrupo\businessMedGrupo.csproj", "{84619854-F1C8-4103-86B0-74499B56E606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "businessMedGrupo", "businessMedGrupo\businessMedGrupo.csproj", "{84619854-F1C8-4103-86B0-74499B56E606}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apiMedGrupo", "apiMedGrupo\apiMedGrupo.csproj", "{E353FDCA-CDBB-4234-B131-A54A60FBB2E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apiMedGrupo", "apiMedGrupo\apiMedGrupo.csproj", "{E353FDCA-CDBB-4234-B131-A54A60FBB2E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testMedGrupo", "testMedGrupo\testMedGrupo.csproj", "{4FD5E16A-1362-49B9-ACE0-0BCF787C0BED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testMedGrupo", "testMedGrupo\testMedGrupo.csproj", "{4FD5E16A-1362-49B9-ACE0-0BCF787C0BED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webMedGrupo", "webMedGrupo\webMedGrupo.csproj", "{1BAC8A02-205A-48E2-BF31-83F12E3878B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4FD5E16A-1362-49B9-ACE0-0BCF787C0BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FD5E16A-1362-49B9-ACE0-0BCF787C0BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FD5E16A-1362-49B9-ACE0-0BCF787C0BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAC8A02-205A-48E2-BF31-83F12E3878B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAC8A02-205A-48E2-BF31-83F12E3878B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAC8A02-205A-48E2-BF31-83F12E3878B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAC8A02-205A-48E2-BF31-83F12E3878B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

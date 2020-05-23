@@ -1,0 +1,180 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+
+
+<ul id="example-1">
+    <li v-for="item in items" :key="item.message">
+        {{ item.message }}
+    </li>
+</ul>
+
+<br /><br /><br />
+
+<div id="app">
+    {{ message }}
+</div>
+
+<br /><br /><br />
+
+<div id="example-2" class="demo">
+    <input v-model="message2" placeholder="edit me">
+    <p>Message is: {{ message2 }}</p>
+</div>
+
+<br /><br /><br />
+
+
+<h1 v-if="toggle">Fabio 1</h1>
+
+<div id="exemplo-3">
+
+    <h1 v-if="toggle">Fabio 2</h1>
+
+    <input type="checkbox" checked v-model="toggle" true-value="true" false-value="" id="chkexibir">
+    <label for="chkexibir">exibir ou esconder o pedaço da tela</label>
+    <p>Toggle is: {{ toggle }}</p>
+
+</div>
+
+<br /><br /><br />
+
+
+
+
+
+
+
+
+<div>
+
+    <h3>exemplo 4</h3>
+
+    <ul id="example4">
+
+        <li v-for="result in results">
+            {{ result.idContato }} | {{ result.nome }} | {{ result.sexo }} | {{ result.dataNascimento }}
+
+        </li>
+
+    </ul>
+
+</div>
+
+<br /><br /><br />
+
+
+
+
+<div id="formcontato">
+    Nome <input type="text" id="tnome" v-model="nome" /><br />
+    Sexo <input type="text" id="tsexo" v-model="sexo" /><br />
+    <button v-on:click="enviar">Enviar contato</button>
+</div>
+
+
+
+<script>
+
+    // https://vuejs.org/v2/guide/forms.html#Text
+    // https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/
+    // http://codeheaven.io/how-to-use-axios-as-your-http-client-pt/
+    // https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+
+    var axiosHeader = {
+        headers: { 'X-My-Custom-Header': 'Header-Value' }
+    };
+
+
+    new Vue({
+        el: '#formcontato',
+        data: {
+            nome: '',
+            sexo: '',
+            DataNascimento: '2010-05-23'
+        },
+        methods: {
+            enviar: function (event) {
+
+                console.log("this._data");
+                console.log(this._data);
+
+                axios.post('http://localhost:57335/api/contatos/', this._data)
+                .then((response) => {
+                    console.log(response);
+                    console.log(response.data.infos[0]);
+                }, (error) => {
+                    console.log(error);
+                });
+
+            }
+        }
+    })
+
+
+    /*
+    axios.post('/save', { firstName: 'Marlon', lastName: 'Bernardes' })
+        .then(function (response) {
+            console.log('salvo com sucesso')
+        });  
+    */
+
+    new Vue({
+        el: '#example4',
+        data: {
+            results: []
+        },
+        mounted() {
+            axios.get("http://localhost:57335/api/contatos", axiosHeader)
+                .then(response => {
+                    this.results = response.data.colecao;
+                    console.log(response.data);
+                }).catch(error => { console.log(error); });
+        }
+    })
+
+
+
+
+    new Vue({
+        el: '#exemplo-3',
+        data: {
+            toggle: 'true'
+        }
+    })
+
+
+    new Vue({
+        el: '#example-2',
+        data: {
+            message2: ''
+        }
+    })
+
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+
+
+    var example1 = new Vue({
+        el: '#example-1',
+        data: {
+            items: [
+                { message: 'Foo' },
+                { message: 'Testea' },
+                { message: 'Bar' }
+            ]
+        }
+    })
+
+</script>
+
