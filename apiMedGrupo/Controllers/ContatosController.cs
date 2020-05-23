@@ -30,9 +30,7 @@ namespace apiMedGrupo.Controllers
             }
             catch (Exception e)
             {
-                envelope.Id = 1;
-                envelope.Resultado = "Erro ao carregar contato";
-                envelope.MensagemErro = e.Message;
+                envelope.AddExcecao("Erro ao CARREGAR contato.", e);
             }
             return Ok(envelope);
         }
@@ -40,7 +38,7 @@ namespace apiMedGrupo.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<IActionResult> Get(int id)
+        public ActionResult<Envelope> Get(int id)
         {
             Envelope envelope = new Envelope();
             try
@@ -49,13 +47,11 @@ namespace apiMedGrupo.Controllers
                 BusContato bContato = new BusContato();
 
                 // retorno da API
-                envelope.Objeto = bContato.Carregar(id);
+                envelope.Colecao.Add( bContato.Carregar(id));
             }
             catch (Exception e)
             {
-                envelope.Id = 1;
-                envelope.Resultado = "Erro ao carregar contato";
-                envelope.MensagemErro = e.Message;
+                envelope.AddExcecao("Erro ao CARREGAR contato", e);
             }
             return Ok(envelope);
         }
@@ -73,15 +69,14 @@ namespace apiMedGrupo.Controllers
                 bContato.Salvar(value);
 
                 // retorno da API
-                envelope.Resultado = "Sucesso em CRIAR contato";
+                envelope.Infos.Add("Sucesso ao GRAVAR contato");
+
                 // retorno o mesmo objeto para cliente poder ter campos atualizados (pk e idade);
-                envelope.Objeto = value; 
+                envelope.Colecao.Add(value);
             }
             catch (Exception e)
             {
-                envelope.Id = 1;
-                envelope.Resultado = "Erro ao gravar contato";
-                envelope.MensagemErro = e.Message;
+                envelope.AddExcecao("Erro ao GRAVAR contato", e);
             }
             return Ok(envelope);
         }
@@ -106,13 +101,11 @@ namespace apiMedGrupo.Controllers
                 bContato.Apagar(id);
 
                 // retorno da API
-                envelope.Resultado = "Sucesso em apagar contato";
+                envelope.Infos.Add("Sucesso ao APAGAR contato");
             }
             catch (Exception e)
             {
-                envelope.Id = 1;
-                envelope.Resultado = "Erro ao apagar contato";
-                envelope.MensagemErro = e.Message;
+                envelope.AddExcecao("Erro ao APAGAR contato", e);
             }
             return Ok(envelope);
         }

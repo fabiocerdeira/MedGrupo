@@ -32,6 +32,36 @@ namespace entitiesMedGrupo
             }
         }
 
+
+        /*
+         * Método que compara dois objetos.
+         */
+        public override bool Equals(Object obj)
+        {
+            // valor retornado pela função.
+            bool retorno = true;
+
+            //Check for null and compare run-time types.
+            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+            {
+                // objetos diferentes.
+                retorno = false;
+            }
+            else
+            {
+                Contato objContato = (Contato)obj;
+                if (objContato.IdContato != this.IdContato) retorno = false;
+                if (objContato.Nome != this.Nome) retorno = false;
+                if (objContato.DataNascimento != this.DataNascimento) retorno = false;
+                if (objContato.Sexo != this.Sexo) retorno = false;
+                if (objContato.Idade != this.Idade) retorno = false;
+            }
+
+            // valor retornado pela função.
+            return retorno;
+
+        }
+
     }
 }
 
